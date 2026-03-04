@@ -1,0 +1,6 @@
+version: 2
+tunnels:
+  frontend:
+    proto: http
+    addr: frontend:3000
+    inspect: false

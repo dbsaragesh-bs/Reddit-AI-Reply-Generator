@@ -1,0 +1,101 @@
+# ========================
+# Environment / Secrets
+# ========================
+.env
+.env.*
+!.env.example
+
+# ========================
+# Dependencies
+# ========================
+node_modules/
+package-lock.json
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+*.egg
+pip-log.txt
+
+# ========================
+# Build artifacts
+# ========================
+# Scala / sbt
+target/
+project/target/
+project/project/
+*.jar
+*.class
+.bsp/
+
+# Frontend / Vite
+dist/
+*.tsbuildinfo
+
+# Python
+*.so
+build/
+develop-eggs/
+.installed.cfg
+
+# ========================
+# IDE / Editor
+# ========================
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# ========================
+# Linter / Formatter cache
+# ========================
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ========================
+# Docker
+# ========================
+*.log
+docker-compose.override.yml
+
+# ========================
+# Data / Test files
+# ========================
+*.json
+!package.json
+!tsconfig.json
+!tsconfig.node.json
+
+# ========================
+# OS files
+# ========================
+.DS_Store
+Thumbs.db
+Desktop.ini
+nul
+
+# ========================
+# Agent / AI tool artifacts
+# ========================
+.agent/
+
+# ========================
+# Misc
+# ========================
+*.tmp
+*.bak
+*.orig
+.npm/

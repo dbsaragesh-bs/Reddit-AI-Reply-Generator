@@ -163,7 +163,6 @@ services:
     ports:
       - "8080:8080"
       - "7077:7077"
-      - "4040:4040"
     user: root
     command:
       - bash
@@ -235,6 +234,8 @@ services:
       - spark.cores.max=2
       - --conf
       - spark.sql.streaming.checkpointLocation=/checkpoints
+      - --conf
+      - spark.ui.port=4040
       - --packages
       - org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0
       - /opt/spark-app/spark-streaming-service.jar
@@ -254,6 +255,8 @@ services:
       BATCH_SIZE: 50
     volumes:
       - spark_streaming_ivy:/root/.ivy2
+    ports:
+      - "4040:4040"
     networks:
       - bigdata-net
     restart: on-failure
@@ -283,6 +286,8 @@ services:
       - spark.cores.max=2
       - --conf
       - spark.driver.maxResultSize=1g
+      - --conf
+      - spark.ui.port=4041
       - --packages
       - org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0
       - /opt/spark-app/spark-batch-service.jar
@@ -301,6 +306,7 @@ services:
       - spark_batch_ivy:/root/.ivy2
     ports:
       - "8085:8085"
+      - "4041:4041"
     networks:
       - bigdata-net
     restart: on-failure
